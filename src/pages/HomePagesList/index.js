@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { getHomePagesThunk } from "../../store/homepages/action";
 import { selectHomePages } from "../../store/homepages/selectors";
 
+import HomePageCard from "../../components/HomePageCard/index";
+
 import { Jumbotron } from "react-bootstrap";
 import Container from "react-bootstrap/Container";
 
@@ -19,17 +21,17 @@ export default function HomePagesList() {
       <Jumbotron>
         <h1>Homepages</h1>
       </Jumbotron>
-
       <Container>
-        <h2>Homepages cards</h2>
         {homepages.map((homepage) => {
           return (
-            <div key={homepage.id}>
-              <h2>{homepage.title}</h2>
-              <h2>{homepage.description}</h2>
-              <h2>{homepage.backgroundColor}</h2>
-              <h2>{homepage.color}</h2>
-            </div>
+            <HomePageCard
+              key={homepage.id}
+              id={homepage.id}
+              title={homepage.title}
+              description={homepage.description}
+              backgroundColor={homepage.backgroundColor}
+              color={homepage.color}
+            />
           );
         })}
       </Container>
