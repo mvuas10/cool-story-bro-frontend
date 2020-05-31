@@ -8,6 +8,7 @@ import { useParams } from "react-router-dom";
 
 import { Jumbotron } from "react-bootstrap";
 import Container from "react-bootstrap/Container";
+import Stories from "../../components/Stories";
 
 export default function HomePageDetails() {
   const dispatch = useDispatch();
@@ -30,6 +31,7 @@ export default function HomePageDetails() {
       >
         <h2>{homepage.title}</h2>
         <h4>{homepage.description}</h4>
+        <Stories />
       </Jumbotron>
     </div>
   );
