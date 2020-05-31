@@ -6,6 +6,9 @@ import { selectHomePages } from "../../store/homepages/selectors";
 import { selectHomePageDetails } from "../../store/homepageDetails/selector";
 import { useParams } from "react-router-dom";
 
+import { Jumbotron } from "react-bootstrap";
+import Container from "react-bootstrap/Container";
+
 export default function HomePageDetails() {
   const dispatch = useDispatch();
   const homepage = useSelector(selectHomePageDetails);
@@ -19,8 +22,15 @@ export default function HomePageDetails() {
 
   return (
     <div>
-      <h2>{homepage.title}</h2>
-      <h4>{homepage.description}</h4>
+      <Jumbotron
+        style={{
+          color: homepage.color,
+          backgroundColor: homepage.backgroundColor,
+        }}
+      >
+        <h2>{homepage.title}</h2>
+        <h4>{homepage.description}</h4>
+      </Jumbotron>
     </div>
   );
 }
