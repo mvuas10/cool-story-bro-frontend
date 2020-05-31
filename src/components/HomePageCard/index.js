@@ -13,7 +13,7 @@ export default function HomePageCard(props) {
           <Card.Title>{props.title}</Card.Title>
           <p>{props.description}</p>
           <p>{props.userId}</p>
-          <Link to={`/homepages/${props.id}`}>
+          <Link to={`/${props.id}`}>
             <Button variant="primary">Visit Page</Button>
           </Link>
         </Card.Body>
