@@ -31,7 +31,7 @@ export default function HomePageDetails() {
       >
         <h2>{homepage.title}</h2>
         <h4>{homepage.description}</h4>
-        <Stories />
+        <Stories homepage={homepage} />
       </Jumbotron>
     </div>
   );
